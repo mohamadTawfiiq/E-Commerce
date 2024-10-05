@@ -1,0 +1,16 @@
+<div class="container p-2 my-5">
+    <div class="row g-4 my-3">
+        @for (brand of brandsList; track brand._id ) {
+            
+            <div class="col-md-4 ">
+                <div (click)="getSpecificBrand(brand._id)" class="card-img inner border shadow">
+                    <img [src]="brand.image" class="w-100" height="250px" [alt]="brand.name">
+                    <div class="card-footer py-3 bg-info-subtle">
+                        <h2 class="text-main text-center" >{{brand.name}}</h2>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

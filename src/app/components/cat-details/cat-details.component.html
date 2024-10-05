@@ -1,0 +1,13 @@
+<div class="container my-5">
+    <div class="row mt-5">
+        <div class="col-md-5">
+
+            <img [src]="catDetails.image" class="w-100" [alt]="catDetails.name">
+        </div>
+
+        <div class="col-md-7 d-flex flex-column justify-content-center">
+            <h1 class="text-main fw-bolder px-2 "> Name : {{catDetails.name}} </h1>
+            <h2 class=" px-2 fw-bold "> <span class="text-primary">Created At :</span> {{catDetails.createdAt}} </h2>
+        </div>
+    </div>
+</div>

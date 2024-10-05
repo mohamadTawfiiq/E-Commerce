@@ -1,0 +1,15 @@
+<div class="container py-2 my-5">
+    <div class="row g-4 my-3">
+        @for (cat of categoriesList; track cat._id ) {
+            <div class="col-md-4 cr ">
+                <div [routerLink]="['/catdetails' , cat._id ]" routerLinkActive="router-link-active"   class="card-img inner border shadow">
+                    <img [src]="cat.image" class="w-100" height="350px" [alt]="cat.name">
+                    <div class="card-footer py-3 bg-info-subtle">
+                        <h2 class="text-main text-center" >{{cat.name}}</h2>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

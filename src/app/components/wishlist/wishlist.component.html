@@ -1,0 +1,24 @@
+<div class="container py-1 mt-5">
+
+    <h1 class="text-main text-center fw-bolder bg-success-subtle mt-5 mb-3 py-3 rounded-4">Wish List</h1>
+    @for (wish of wishList; track wish._id) {
+
+    <div class="row w-75 mx-auto bg-body-secondary shadow border-bottom mb-2">
+        <div class="col-md-2">
+            <img [src]="wish.imageCover" class="w-100" [alt]="wish.title">
+        </div>
+        <div class="col-md-10 d-flex align-items-center justify-content-between" >
+
+            <div class="">
+                <h3>name : {{wish.title.split(" " , 2).join(" ")}} </h3>
+                <h4 class="text-main">Price : {{wish.price}} </h4>
+                <span (click)="removeFromWishlist(wish._id)" class="cr text-danger fw-bold"><i class="fa-solid fa-trash"></i> Remove </span>
+            </div>
+            <div>
+                <button (click)="addToCart(wish._id)" class="btn-main">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>

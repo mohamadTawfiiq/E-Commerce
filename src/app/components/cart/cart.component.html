@@ -1,0 +1,78 @@
+<!-- <div class="container mt-4 bg-body-secondary p-3 ">
+
+    <div class="d-flex justify-content-between">
+        <h1 class="text-main"> Shop Cart :</h1>
+        <button (click)="ClearCart()" class="btn btn-outline-danger fw-bolder py-2 px-4">Clear Cart</button>
+    </div>
+    <h3 class="fw-bolder"> Total Cart Price : {{userCart.totalCartPrice}}</h3>
+
+    @for (product of userCart.products; track product._id) { 
+
+    <div class="row mb-2 border-bottom bg-body-secondary p-3">
+        <div class="col-md-1">
+            <div class="inner">
+                <img class="w-100" [src]="product.product.imageCover" [alt]="product.product.title">
+            </div>
+        </div>
+        <div class="col-md-11 d-flex justify-content-between">
+            <div class="inner">
+                <h4 class="fw-bolder">Name : {{product.product.title}} </h4>
+                <h5 class="fw-bolder text-main">Price : {{product.price}} |  </h5>
+                <span (click)="DeleteOroduct(product.product._id)" class="cr text-danger fw-bold"><i class="fa-solid fa-trash"></i> Remove</span>
+            </div>
+
+            <div class="count d-flex align-items-center ">
+                <span (click)="UpdateCount(product.product._id , product.count + 1 )" class="text-main cr"><i class="fa-solid fa-plus-circle fa-2x "></i></span>
+                <span class="mx-3 fw-bolder text-primary">{{product.count}}</span>
+                <span (click)="UpdateCount(product.product._id , product.count - 1 )" class="text-main cr"><i class="fa-solid fa-minus-circle fa-2x "></i></span>
+        
+            </div>
+
+        </div>
+    </div>
+    }
+
+    <button [routerLink]="['/orders' ,userCart._id]" class="btn-main mt-3">Payment By Visa</button>
+    <button [routerLink]="['/cashOrder' ,userCart._id]" class="btn-main mt-3">Payment By cash</button>
+</div> -->
+
+@if (userCart.totalCartPrice != 0) {
+
+    <div class="container mt-5 bg-body-secondary p-3 ">
+
+        <div class="d-flex justify-content-between mt-4">
+            <h1 class="text-main"> Shop Cart :</h1>
+            <button (click)="ClearCart()" class="btn btn-outline-danger fw-bolder py-2 px-4">Clear Cart</button>
+        </div>
+        <h3 class="fw-bolder"> Total Cart Price : {{userCart.totalCartPrice}}</h3>
+    
+        @for (product of userCart.products; track product._id) { 
+    
+        <div class="row mb-2 border-bottom bg-body-secondary p-3">
+            <div class="col-md-1">
+                <div class="inner">
+                    <img class="w-100" [src]="product.product.imageCover" [alt]="product.product.title">
+                </div>
+            </div>
+            <div class="col-md-11 d-flex justify-content-between">
+                <div class="inner">
+                    <h4 class="fw-bolder">Name : {{product.product.title}} </h4>
+                    <h5 class="fw-bolder text-main">Price : {{product.price}} |  </h5>
+                    <span (click)="DeleteOroduct(product.product._id)" class="cr text-danger fw-bold"><i class="fa-solid fa-trash"></i> Remove</span>
+                </div>
+    
+                <div class="count d-flex align-items-center ">
+                    <span (click)="UpdateCount(product.product._id , product.count + 1 )" class="text-main cr"><i class="fa-solid fa-plus-circle fa-2x "></i></span>
+                    <span class="mx-3 fw-bolder text-primary">{{product.count}}</span>
+                    <span (click)="UpdateCount(product.product._id , product.count - 1 )" class="text-main cr"><i class="fa-solid fa-minus-circle fa-2x "></i></span>
+            
+                </div>
+    
+            </div>
+        </div>
+        }
+    
+        <button [routerLink]="['/orders' ,userCart._id]" class="btn-main mt-3">Payment By Visa</button>
+        <button [routerLink]="['/cashOrder' ,userCart._id]" class="btn-main mt-3">Payment By cash</button>
+    </div>
+}

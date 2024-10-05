@@ -1,0 +1,28 @@
+<div class="container shadow rounded-4 my-3 p-3">
+
+    <h1 class="text-center text-main fw-bolder">Shipping Adderss</h1>
+
+    <form [formGroup]="orders" (ngSubmit)="navToStripe()">
+
+        <div class="my-3 ">
+            <label class="fw-bolder" for="details">Details</label>
+            <textarea formControlName="details"  class="form-control" id="details"></textarea>
+            
+        </div>
+
+
+        <div class="my-3 ">
+            <label class="fw-bolder" for="phone">Phone</label>
+            <input formControlName="phone" class="form-control " id="phone" type="tel">
+        </div>
+
+        <div class="my-3 ">
+            <label class="fw-bolder" for="city">City</label>
+            <input formControlName="city" class="form-control" id="city" type="text">
+        </div>
+    
+        <button  class="btn btn-main" type="submit" >Submit</button>
+
+    </form>
+
+</div>
